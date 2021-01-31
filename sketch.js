@@ -106,8 +106,19 @@ function draw() {
   if(particle !=null){
     particle.display();
     if(particle.body.position.y>760){
-      if(particle.position.x <300){
+      if(particle.body.position.x <300){
         score = score+500;
+        particle = null;
+        if(turn>=5)gameState ="end";
+      }
+    }
+  }
+
+  if(particle !=null){
+    particle.display();
+    if(particle.body.position.y>760){
+      if(particle.body.position.x >301 && particle.body.position.x<600){
+        score = score+100;
         particle = null;
         if(turn>=5)gameState ="end";
       }
