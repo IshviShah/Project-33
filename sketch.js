@@ -99,24 +99,19 @@ function draw() {
     particles[p].display();
   }
 
-  if(frameCount%60===0){
+  /*if(frameCount%60===0){
     particles.push(new Particle(random(width/2-10, width/2+10),10, 10));
-  }
+  }*/
 
   if(particle !=null){
     particle.display();
     if(particle.body.position.y>760){
-      if(particle.body.position.x <300){
+      if(particle.body.position.x <200){
         score = score+500;
         particle = null;
         if(turn>=5)gameState ="end";
-      }
-    }
-  }
-
-  if(particle !=null){
-    particle.display();
-    if(particle.body.position.y>760){
+      }  
+  
       if(particle.body.position.x >301 && particle.body.position.x<600){
         score = score+100;
         particle = null;
@@ -127,9 +122,9 @@ function draw() {
   ground.display();
 }
 
-function mousePressed(){
+function keyPressed(){
 
-  if(gameState!== "end"){
+  if(gameState!== "end" && keyCode===32){
     turn++;
     particle = new Particle(mouseX,10,10,10);
   }
