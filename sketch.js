@@ -110,15 +110,27 @@ function draw() {
         score = score+500;
         particle = null;
         if(turn>=5)gameState ="end";
-      }  
+      }
+    }
   
+    if(particle.body.position.y>760){
       if(particle.body.position.x >301 && particle.body.position.x<600){
         score = score+100;
         particle = null;
         if(turn>=5)gameState ="end";
       }
     }
-  }
+
+    if(particle.body.position.y>760){
+      if(particle.body.position.x >601 && particle.body.position.x<900){
+        score = score+200;
+        particle = null;
+        if(turn>=5)gameState ="end";
+      }
+    }
+    }
+
+  
   ground.display();
 }
 
